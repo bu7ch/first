@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Personnages
+{% endblock %}
+
+{% block body %}
+	{% for personne in personnages %}
+		<div>
+			<img src="{{ asset('images/personnages/' ~ personne.name ~'.jpeg')}}" alt="">
+		</div>
+		<div>Pseudo :
+			{{personne.name}}</div>
+		<div>Age :
+			{{personne.age}}</div>
+		<div>Sexe:
+			{{personne.sexe}}</div>
+		<div>Force :
+			{{personne.stats.force}}</div>
+		<div>Agilité :
+			{{personne.stats.agi}}</div>
+		<div>Intelligence :
+			{{personne.stats.intel}}</div>
+
+	{% endfor %}
+{% endblock %}
